@@ -1,15 +1,27 @@
 from setuptools import find_packages, setup
+import glob 
+import os
 
-package_name = 'my_package_2'
+from glob import glob
+
+package_name = 'clifford'
 
 setup(
     name=package_name,
     version='0.0.0',
-    packages=find_packages(exclude=['test']),
+    packages=['clifford'],
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+
+        (os.path.join('share', package_name, 'config'), glob('config/*.yaml')),
+
+        (os.path.join('share', package_name, 'launch'), glob('launch/*.py')),
+
+        (os.path.join('share', package_name, 'urdf'), glob('urdf/*.urdf')),
+
+        (os.path.join('share', package_name), ['README.md']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -20,7 +32,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'my_node_2 = my_package_2.my_node_2:main'
+            'user_node = clifford.user:main',
         ],
     },
 )
