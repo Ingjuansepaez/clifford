@@ -1,0 +1,648 @@
+<sdf version='1.7'>
+  <model name='clifford'>
+    <link name='base_footprint'>
+      <inertial>
+        <pose>0.000111 -0.000219 0.239574 0 -0 0</pose>
+        <mass>0.67215</mass>
+        <inertia>
+          <ixx>0.00045592</ixx>
+          <ixy>-1.3217e-15</ixy>
+          <ixz>-5.901e-15</ixz>
+          <iyy>0.0015305</iyy>
+          <iyz>-3.9529e-11</iyz>
+          <izz>0.0019462</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_footprint_fixed_joint_lump__base_link_collision'>
+        <pose>0 0 0.2425 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_footprint_fixed_joint_lump__base_link_visual'>
+        <pose>0 0 0.2425 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hombro_1_joint' type='revolute'>
+      <pose relative_to='base_footprint'>-0.0925 -0.090321 0.2225 3.14159 1.57079 3.14159</pose>
+      <parent>base_footprint</parent>
+      <child>hombro_1_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>1</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='hombro_1_link'>
+      <pose relative_to='hombro_1_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.023513 0.010937 0.001882 0 -0 0</pose>
+        <mass>0.026193</mass>
+        <inertia>
+          <ixx>9.4188e-06</ixx>
+          <ixy>-2.9548e-07</ixy>
+          <ixz>-1.387e-15</ixz>
+          <iyy>7.078e-06</iyy>
+          <iyz>3.2313e-14</iyz>
+          <izz>7.8863e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='hombro_1_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/hombro_1_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hombro_1_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/hombro_1_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='codo_1_joint' type='revolute'>
+      <pose relative_to='hombro_1_link'>0.0535 0.01292 0.001389 1.5708 -0 0</pose>
+      <parent>hombro_1_link</parent>
+      <child>codo_1_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>1</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='codo_1_link'>
+      <pose relative_to='codo_1_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.019153 0.014488 0.000728 0 -0 0</pose>
+        <mass>0.094179</mass>
+        <inertia>
+          <ixx>1.9321e-05</ixx>
+          <ixy>1.9765e-11</ixy>
+          <ixz>7.2156e-17</ixz>
+          <iyy>8.49e-06</iyy>
+          <iyz>2.8789e-15</iyz>
+          <izz>2.0432e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='codo_1_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/codo_1_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='codo_1_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/codo_1_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='muneca_1_joint' type='revolute'>
+      <pose relative_to='codo_1_link'>0.039 0.0295 0 0 -0 1.5708</pose>
+      <parent>codo_1_link</parent>
+      <child>muneca_1_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>1</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='muneca_1_link'>
+      <pose relative_to='muneca_1_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.04965 -0.000355 0.005031 0 -0 0</pose>
+        <mass>0.072202</mass>
+        <inertia>
+          <ixx>1.4705e-05</ixx>
+          <ixy>1.1128e-07</ixy>
+          <ixz>-2.5527e-06</ixz>
+          <iyy>2.6079e-05</iyy>
+          <iyz>2.973e-08</iyz>
+          <izz>1.815e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='muneca_1_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/muneca_1_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='muneca_1_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/muneca_1_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hombro_2_joint' type='revolute'>
+      <pose relative_to='base_footprint'>0.0925 -0.090321 0.2225 -3.07137 1.57079 3.14159</pose>
+      <parent>base_footprint</parent>
+      <child>hombro_2_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>1</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='hombro_2_link'>
+      <pose relative_to='hombro_2_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.023513 0.011042 0.001109 0 -0 0</pose>
+        <mass>0.026193</mass>
+        <inertia>
+          <ixx>9.4188e-06</ixx>
+          <ixy>-2.9475e-07</ixy>
+          <ixz>2.0733e-08</ixz>
+          <iyy>7.082e-06</iyy>
+          <iyz>5.6575e-08</iyz>
+          <izz>7.8823e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='hombro_2_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/hombro_2_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hombro_2_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/hombro_2_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='codo_2_joint' type='revolute'>
+      <pose relative_to='hombro_2_link'>0.0535 0.012985 0.000479 1.5006 -0 0</pose>
+      <parent>hombro_2_link</parent>
+      <child>codo_2_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>1</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='codo_2_link'>
+      <pose relative_to='codo_2_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.019153 0.014488 0.000728 0 -0 0</pose>
+        <mass>0.094179</mass>
+        <inertia>
+          <ixx>1.9321e-05</ixx>
+          <ixy>1.9765e-11</ixy>
+          <ixz>7.2154e-17</ixz>
+          <iyy>8.49e-06</iyy>
+          <iyz>2.8789e-15</iyz>
+          <izz>2.0432e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='codo_2_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/codo_2_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='codo_2_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/codo_2_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='muneca_2_joint' type='revolute'>
+      <pose relative_to='codo_2_link'>0.039 0.0295 0 0 -0 1.5708</pose>
+      <parent>codo_2_link</parent>
+      <child>muneca_2_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>1</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='muneca_2_link'>
+      <pose relative_to='muneca_2_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.04965 -0.000355 0.005031 0 -0 0</pose>
+        <mass>0.072202</mass>
+        <inertia>
+          <ixx>1.4705e-05</ixx>
+          <ixy>1.1128e-07</ixy>
+          <ixz>-2.5527e-06</ixz>
+          <iyy>2.6079e-05</iyy>
+          <iyz>2.973e-08</iyz>
+          <izz>1.815e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='muneca_2_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/muneca_2_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='muneca_2_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/muneca_2_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hombro_3_joint' type='revolute'>
+      <pose relative_to='base_footprint'>0.0925 0.089179 0.2225 3.14159 1.57079 3.14159</pose>
+      <parent>base_footprint</parent>
+      <child>hombro_3_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>1</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='hombro_3_link'>
+      <pose relative_to='hombro_3_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.023513 -0.010937 -0.004361 0 -0 0</pose>
+        <mass>0.026193</mass>
+        <inertia>
+          <ixx>9.4188e-06</ixx>
+          <ixy>2.9548e-07</ixy>
+          <ixz>-5.7849e-15</ixz>
+          <iyy>7.078e-06</iyy>
+          <iyz>4.0305e-14</iyz>
+          <izz>7.8863e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='hombro_3_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/hombro_3_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hombro_3_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/hombro_3_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='codo_3_joint' type='revolute'>
+      <pose relative_to='hombro_3_link'>0.0535 -0.01182 -0.011111 -1.5708 0 0</pose>
+      <parent>hombro_3_link</parent>
+      <child>codo_3_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>1</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='codo_3_link'>
+      <pose relative_to='codo_3_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.019153 -0.014488 -0.000372 0 -0 0</pose>
+        <mass>0.094179</mass>
+        <inertia>
+          <ixx>1.9321e-05</ixx>
+          <ixy>1.9765e-11</ixy>
+          <ixz>-1.4981e-16</ixz>
+          <iyy>8.49e-06</iyy>
+          <iyz>2.8729e-15</iyz>
+          <izz>2.0432e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='codo_3_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/codo_3_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='codo_3_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/codo_3_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='muneca_3_joint' type='revolute'>
+      <pose relative_to='codo_3_link'>0.039 -0.0295 0 0 0 -1.5708</pose>
+      <parent>codo_3_link</parent>
+      <child>muneca_3_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>1</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='muneca_3_link'>
+      <pose relative_to='muneca_3_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.04965 0.000355 -0.005562 0 -0 0</pose>
+        <mass>0.072202</mass>
+        <inertia>
+          <ixx>1.4705e-05</ixx>
+          <ixy>-1.1128e-07</ixy>
+          <ixz>2.5527e-06</ixz>
+          <iyy>2.6079e-05</iyy>
+          <iyz>2.973e-08</iyz>
+          <izz>1.815e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='muneca_3_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/muneca_3_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='muneca_3_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/muneca_3_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hombro_4_joint' type='revolute'>
+      <pose relative_to='base_footprint'>-0.0925 0.089179 0.2225 3.14159 1.57079 3.14159</pose>
+      <parent>base_footprint</parent>
+      <child>hombro_4_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>1</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='hombro_4_link'>
+      <pose relative_to='hombro_4_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.023513 -0.010937 0.000494 0 -0 0</pose>
+        <mass>0.026193</mass>
+        <inertia>
+          <ixx>9.4188e-06</ixx>
+          <ixy>2.9548e-07</ixy>
+          <ixz>-5.7849e-15</ixz>
+          <iyy>7.078e-06</iyy>
+          <iyz>4.0305e-14</iyz>
+          <izz>7.8863e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='hombro_4_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/hombro_4_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hombro_4_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/hombro_4_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='codo_4_joint' type='revolute'>
+      <pose relative_to='hombro_4_link'>0.0535 -0.01182 -0.001389 -1.5708 0 0</pose>
+      <parent>hombro_4_link</parent>
+      <child>codo_4_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>1</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='codo_4_link'>
+      <pose relative_to='codo_4_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.019153 -0.014488 -0.000372 0 -0 0</pose>
+        <mass>0.094179</mass>
+        <inertia>
+          <ixx>1.9321e-05</ixx>
+          <ixy>1.9765e-11</ixy>
+          <ixz>-1.4982e-16</ixz>
+          <iyy>8.49e-06</iyy>
+          <iyz>2.8728e-15</iyz>
+          <izz>2.0432e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='codo_4_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/codo_4_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='codo_4_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/codo_4_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='muneca_4_joint' type='revolute'>
+      <pose relative_to='codo_4_link'>0.039 -0.0295 0 0 0 -1.5708</pose>
+      <parent>codo_4_link</parent>
+      <child>muneca_4_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>1</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='muneca_4_link'>
+      <pose relative_to='muneca_4_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.04965 0.000355 -0.005562 0 -0 0</pose>
+        <mass>0.072202</mass>
+        <inertia>
+          <ixx>1.4705e-05</ixx>
+          <ixy>-1.1128e-07</ixy>
+          <ixz>2.5527e-06</ixz>
+          <iyy>2.6079e-05</iyy>
+          <iyz>2.973e-08</iyz>
+          <izz>1.815e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='muneca_4_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/muneca_4_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='muneca_4_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://clifford_urdf/meshes/muneca_4_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

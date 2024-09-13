@@ -1,5 +1,4 @@
 from setuptools import find_packages, setup
-import glob 
 import os
 
 from glob import glob
@@ -19,9 +18,21 @@ setup(
 
         (os.path.join('share', package_name, 'launch'), glob('launch/*.py')),
 
-        (os.path.join('share', package_name, 'urdf'), glob('urdf/*.urdf')),
+        (os.path.join('share', package_name, 'worlds'), glob('worlds/*.world')),
+
+        (os.path.join('share', package_name, 'description'), glob('description/*.xacro')),
+
+        (os.path.join('share', package_name, 'description'), glob('description/*.urdf')),
+
+        (os.path.join('share', package_name, 'description'), glob('description/*.sdf')),
+
+        (os.path.join('share', package_name, 'description'), glob('description/*.urdf.xacro')),
 
         (os.path.join('share', package_name), ['README.md']),
+
+        (os.path.join('share', package_name, 'my_robot_config'), glob('my_robot_config/*.rviz')),
+
+        (os.path.join('share', package_name, 'meshes'), glob('meshes/*.STL')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -33,6 +44,9 @@ setup(
     entry_points={
         'console_scripts': [
             'user_node = clifford.user:main',
+            'user_node_2 = clifford.suscriber_user:main',
+            'locomocion_node = clifford.locomocion:main',
+            'direct_node = clifford.direct_kinematic:main',
         ],
     },
 )
