@@ -34,7 +34,7 @@ setup(
 
         (os.path.join('share', package_name, 'meshes'), glob('meshes/*.STL')),
     ],
-    install_requires=['setuptools'],
+    install_requires=['setuptools', 'direct_kinematic', 'inverse_kinematic'],
     zip_safe=True,
     maintainer='jagger',
     maintainer_email='juansepc@hotmail.com',
@@ -45,8 +45,9 @@ setup(
         'console_scripts': [
             'user_node = clifford.user:main',
             'user_node_2 = clifford.suscriber_user:main',
-            'locomocion_node = clifford.locomocion:main',
             'direct_node = clifford.direct_kinematic:main',
+            'locomotion_node_2 = clifford.locomotion:main',
+            'inverse_node = clifford.inverse_kinematic:main',  
         ],
     },
 )
