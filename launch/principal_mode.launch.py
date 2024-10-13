@@ -16,8 +16,8 @@ def generate_launch_description():
 
     nodo_parametro = Node(
         package='clifford',
-        executable='locomocion_node',
-        name='locomocion',
+        executable='locomotion_node_2',
+        name='locomotion_unique',
         output='screen',
         parameters=[{
             'modo': LaunchConfiguration(
